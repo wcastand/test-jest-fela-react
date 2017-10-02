@@ -10,9 +10,10 @@ const felaRenderer = createRenderer();
 expect.addSnapshotSerializer(createSerializer(felaRenderer));
 
 test("test 1", () => {
-  const Test = createComponent(() => ({ fontSize: '16px', color: "red" }));
+  const Test = createComponent(() => ({ fontSize: "16px", color: "red" }));
   const tree = renderer
-    .create(<Provider renderer={felaRenderer}>
+    .create(
+      <Provider renderer={felaRenderer}>
         <Test>Test</Test>
       </Provider>
     )
